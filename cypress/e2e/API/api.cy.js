@@ -5,7 +5,8 @@ describe("API Test ", () => {
   it("Get Request", () => {
     cy.request("https://jsonplaceholder.typicode.com/posts").then(
       (response) => {
-        expect(response.status).to.eql(200);
+        //commands
+       cy.expect_status_200(response)
         response = response.body[4]
         id = response.id
         cy.log('id',id);

@@ -18,6 +18,10 @@ Cypress.Commands.add('openWebPage', (url) => {
 Cypress.Commands.add('checkConsent', () => {
     cy.get('input[name="consent"]').check();
 });
+//api
+Cypress.Commands.add('expect_status_200',(response) => {
+    expect(response.status).to.eql(200);
+})
 
 
 // });
