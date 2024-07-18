@@ -5,7 +5,7 @@ import homepage from "../../pageObjects/homepage";
 describe("Register Page", () => {
   beforeEach(() => {
     // cy.openWebPage อยู่ใน commands.js
-    cy.openWebPage(testData.url);
+    cy.visit(testData.url);
   });
 
   it("Register member ", () => {
