@@ -22,7 +22,9 @@ Cypress.Commands.add('checkConsent', () => {
 Cypress.Commands.add('expect_status_200',(response) => {
     expect(response.status).to.eql(200);
 })
-
+Cypress.Commands.add('expect_status_201_202',(response)=> {
+    expect(response.status).to.be.oneOf([201, 202]);
+})
 
 // });
 //

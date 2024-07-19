@@ -5,7 +5,6 @@ describe("API Test ", () => {
   it("Get Request", () => {
     cy.request("https://jsonplaceholder.typicode.com/posts").then(
       (response) => {
-        //commands
        cy.expect_status_200(response)
         response = response.body[4]
         id = response.id
@@ -24,7 +23,7 @@ describe("API Test ", () => {
         userId: 9,
       },
     }).then((response) => {
-      expect(response.status).to.be.oneOf([201, 202]);
+      cy.expect_status_201_202(response)
       expect(response.body.title).to.eql("API");
       expect(response.body.body).to.eql("Cypress");
       expect(response.body.userId).to.eql(9);
@@ -45,7 +44,7 @@ describe("API Test ", () => {
         userId: 1,
       },
     }).then((response) => {
-      expect(response.status).to.equal(200);
+      cy.expect_status_200(response)
       expect(response.body.title).to.eql("bbbb")
       expect(response.body.body).to.eql("yyyy")
       expect(response.body.userId).to.eql(1)
@@ -58,7 +57,7 @@ describe("API Test ", () => {
       method: 'Delete',
       url: `https://jsonplaceholder.typicode.com/posts/${id}`,
     }).then((response)=>{
-      expect(response.status).to.equal(200);
+      cy.expect_status_200(response)
       cy.log("Delete successful:");
     });
     
