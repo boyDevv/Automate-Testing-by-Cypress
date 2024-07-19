@@ -1,4 +1,5 @@
-
+//npm install --save-dev @testing-library/cypress
+import '@testing-library/cypress/add-commands';
 // -- This is a parent command --
 // Cypress.Commands.add('register', (email, fname,lname,phone,newpassword,password) => { 
 //     cy.get('input[name="email"]').type(email);
